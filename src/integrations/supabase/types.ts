@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          email_verified: boolean
+          full_name: string | null
+          google_sub: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          email_verified?: boolean
+          full_name?: string | null
+          google_sub?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          email_verified?: boolean
+          full_name?: string | null
+          google_sub?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      telegram_link_codes: {
+        Row: {
+          code: string
+          consumed_at: string | null
+          created_at: string
+          expires_at: string
+          user_id: string
+        }
+        Insert: {
+          code: string
+          consumed_at?: string | null
+          created_at?: string
+          expires_at: string
+          user_id: string
+        }
+        Update: {
+          code?: string
+          consumed_at?: string | null
+          created_at?: string
+          expires_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      telegram_links: {
+        Row: {
+          linked_at: string
+          telegram_id: string
+          telegram_username: string | null
+          user_id: string
+        }
+        Insert: {
+          linked_at?: string
+          telegram_id: string
+          telegram_username?: string | null
+          user_id: string
+        }
+        Update: {
+          linked_at?: string
+          telegram_id?: string
+          telegram_username?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
