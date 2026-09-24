@@ -17,6 +17,7 @@ import { Route as ChatRouteImport } from './routes/chat'
 import { Route as ConfigRouteImport } from './routes/config'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HelpRouteImport } from './routes/help'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as PerformanceRouteImport } from './routes/performance'
@@ -65,6 +66,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const HelpRoute = HelpRouteImport.update({
   id: '/help',
   path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LessonsRoute = LessonsRouteImport.update({
@@ -122,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/config': typeof ConfigRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/insights': typeof InsightsRoute
   '/lessons': typeof LessonsRoute
   '/notifications': typeof NotificationsRoute
   '/performance': typeof PerformanceRoute
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/config': typeof ConfigRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/insights': typeof InsightsRoute
   '/lessons': typeof LessonsRoute
   '/notifications': typeof NotificationsRoute
   '/performance': typeof PerformanceRoute
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/config': typeof ConfigRoute
   '/dashboard': typeof DashboardRoute
   '/help': typeof HelpRoute
+  '/insights': typeof InsightsRoute
   '/lessons': typeof LessonsRoute
   '/notifications': typeof NotificationsRoute
   '/performance': typeof PerformanceRoute
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/config'
     | '/dashboard'
     | '/help'
+    | '/insights'
     | '/lessons'
     | '/notifications'
     | '/performance'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/config'
     | '/dashboard'
     | '/help'
+    | '/insights'
     | '/lessons'
     | '/notifications'
     | '/performance'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
     | '/config'
     | '/dashboard'
     | '/help'
+    | '/insights'
     | '/lessons'
     | '/notifications'
     | '/performance'
@@ -240,6 +252,7 @@ export interface RootRouteChildren {
   ConfigRoute: typeof ConfigRoute
   DashboardRoute: typeof DashboardRoute
   HelpRoute: typeof HelpRoute
+  InsightsRoute: typeof InsightsRoute
   LessonsRoute: typeof LessonsRoute
   NotificationsRoute: typeof NotificationsRoute
   PerformanceRoute: typeof PerformanceRoute
@@ -307,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/help'
       fullPath: '/help'
       preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lessons': {
@@ -384,6 +404,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfigRoute: ConfigRoute,
   DashboardRoute: DashboardRoute,
   HelpRoute: HelpRoute,
+  InsightsRoute: InsightsRoute,
   LessonsRoute: LessonsRoute,
   NotificationsRoute: NotificationsRoute,
   PerformanceRoute: PerformanceRoute,

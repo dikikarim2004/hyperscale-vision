@@ -43,7 +43,7 @@ describe("protected behaviour", () => {
   });
 
   it("AI insights server function requires a session", async () => {
-    const mod = await import("../src/lib/insights.functions");
-    expect(typeof mod.explainPerformance).toBe("function");
+    const src = readFileSync("src/lib/insights.functions.ts", "utf8");
+    expect(src).toContain(".middleware([requireSupabaseAuth])");
   });
 });
