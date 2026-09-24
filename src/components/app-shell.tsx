@@ -61,6 +61,7 @@ export const navGroups: { title: string; items: NavItem[] }[] = [
   {
     title: "Intelligence",
     items: [
+      { to: "/insights", label: "AI insights", icon: Sparkles },
       { to: "/performance", label: "Performance", icon: Sparkles },
       { to: "/lessons", label: "Lessons", icon: BookOpen },
       { to: "/activity", label: "Activity log", icon: Activity },
