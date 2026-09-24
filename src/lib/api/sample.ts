@@ -178,8 +178,8 @@ export const samplePnl: PnlSummary = {
   netUsd: Number((realized + samplePositions.reduce((s, p) => s + (p.pnlUsd ?? 0), 0)).toFixed(2)),
   winRate: Number(((wins / days.filter((d) => d.trades > 0).length) * 100).toFixed(1)),
   totalTrades: trades,
-  bestDay: days.reduce((a, b) => (b.pnlUsd > a.pnlUsd ? b : a), days[0]),
-  worstDay: days.reduce((a, b) => (b.pnlUsd < a.pnlUsd ? b : a), days[0]),
+  bestDay: days.reduce<PnlDay | null>((a, b) => (!a || b.pnlUsd > a.pnlUsd ? b : a), null),
+  worstDay: days.reduce<PnlDay | null>((a, b) => (!a || b.pnlUsd < a.pnlUsd ? b : a), null),
   days,
 };
 

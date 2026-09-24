@@ -337,7 +337,7 @@ export const api = {
       for (const field of section.fields) {
         if (field.key in changes) {
           if (field.type === "secret") field.masked = "••••…saved";
-          else field.value = changes[field.key];
+          else field.value = changes[field.key] ?? field.value;
         }
       }
     }
@@ -454,7 +454,7 @@ function buildDevReply(input: string): ChatMessage {
   if (q.includes("screen") || q.includes("candidate") || q.includes("opportunit")) {
     return {
       ...base,
-      content: `Top candidate right now is ${sampleCandidates[0].poolName} with a score of ${sampleCandidates[0].score} and fee/TVL of ${(sampleCandidates[0].feeTvl24h * 100).toFixed(1)}%. Two more pools are on the watchlist and one was rejected for an active dev wallet.`,
+      content: `Top candidate right now is ${sampleCandidates[0]?.poolName ?? "n/a"} with a score of ${sampleCandidates[0]?.score ?? 0} and fee/TVL of ${((sampleCandidates[0]?.feeTvl24h ?? 0) * 100).toFixed(1)}%. Two more pools are on the watchlist and one was rejected for an active dev wallet.`,
       actions: [{ id: "s", label: "Open screener", to: "/screen", tone: "primary" }],
     };
   }
