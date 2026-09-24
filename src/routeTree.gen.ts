@@ -10,11 +10,101 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as ActivityRouteImport } from './routes/activity'
+import { Route as BriefingRouteImport } from './routes/briefing'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as ConfigRouteImport } from './routes/config'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as LessonsRouteImport } from './routes/lessons'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PerformanceRouteImport } from './routes/performance'
+import { Route as PnlRouteImport } from './routes/pnl'
+import { Route as PositionsRouteImport } from './routes/positions'
+import { Route as ScreenRouteImport } from './routes/screen'
+import { Route as StudyRouteImport } from './routes/study'
+import { Route as WalletsRouteImport } from './routes/wallets'
 import { Route as ApiPublicTelegramLinkRouteImport } from './routes/api/public/telegram/link'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivityRoute = ActivityRouteImport.update({
+  id: '/activity',
+  path: '/activity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingRoute = BriefingRouteImport.update({
+  id: '/briefing',
+  path: '/briefing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfigRoute = ConfigRouteImport.update({
+  id: '/config',
+  path: '/config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonsRoute = LessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerformanceRoute = PerformanceRouteImport.update({
+  id: '/performance',
+  path: '/performance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PnlRoute = PnlRouteImport.update({
+  id: '/pnl',
+  path: '/pnl',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PositionsRoute = PositionsRouteImport.update({
+  id: '/positions',
+  path: '/positions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScreenRoute = ScreenRouteImport.update({
+  id: '/screen',
+  path: '/screen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudyRoute = StudyRouteImport.update({
+  id: '/study',
+  path: '/study',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalletsRoute = WalletsRouteImport.update({
+  id: '/wallets',
+  path: '/wallets',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicTelegramLinkRoute = ApiPublicTelegramLinkRouteImport.update({
@@ -25,27 +115,139 @@ const ApiPublicTelegramLinkRoute = ApiPublicTelegramLinkRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/activity': typeof ActivityRoute
+  '/briefing': typeof BriefingRoute
+  '/chat': typeof ChatRoute
+  '/config': typeof ConfigRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/lessons': typeof LessonsRoute
+  '/notifications': typeof NotificationsRoute
+  '/performance': typeof PerformanceRoute
+  '/pnl': typeof PnlRoute
+  '/positions': typeof PositionsRoute
+  '/screen': typeof ScreenRoute
+  '/study': typeof StudyRoute
+  '/wallets': typeof WalletsRoute
   '/api/public/telegram/link': typeof ApiPublicTelegramLinkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/activity': typeof ActivityRoute
+  '/briefing': typeof BriefingRoute
+  '/chat': typeof ChatRoute
+  '/config': typeof ConfigRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/lessons': typeof LessonsRoute
+  '/notifications': typeof NotificationsRoute
+  '/performance': typeof PerformanceRoute
+  '/pnl': typeof PnlRoute
+  '/positions': typeof PositionsRoute
+  '/screen': typeof ScreenRoute
+  '/study': typeof StudyRoute
+  '/wallets': typeof WalletsRoute
   '/api/public/telegram/link': typeof ApiPublicTelegramLinkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/activity': typeof ActivityRoute
+  '/briefing': typeof BriefingRoute
+  '/chat': typeof ChatRoute
+  '/config': typeof ConfigRoute
+  '/dashboard': typeof DashboardRoute
+  '/help': typeof HelpRoute
+  '/lessons': typeof LessonsRoute
+  '/notifications': typeof NotificationsRoute
+  '/performance': typeof PerformanceRoute
+  '/pnl': typeof PnlRoute
+  '/positions': typeof PositionsRoute
+  '/screen': typeof ScreenRoute
+  '/study': typeof StudyRoute
+  '/wallets': typeof WalletsRoute
   '/api/public/telegram/link': typeof ApiPublicTelegramLinkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/telegram/link'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/activity'
+    | '/briefing'
+    | '/chat'
+    | '/config'
+    | '/dashboard'
+    | '/help'
+    | '/lessons'
+    | '/notifications'
+    | '/performance'
+    | '/pnl'
+    | '/positions'
+    | '/screen'
+    | '/study'
+    | '/wallets'
+    | '/api/public/telegram/link'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/telegram/link'
-  id: '__root__' | '/' | '/api/public/telegram/link'
+  to:
+    | '/'
+    | '/account'
+    | '/activity'
+    | '/briefing'
+    | '/chat'
+    | '/config'
+    | '/dashboard'
+    | '/help'
+    | '/lessons'
+    | '/notifications'
+    | '/performance'
+    | '/pnl'
+    | '/positions'
+    | '/screen'
+    | '/study'
+    | '/wallets'
+    | '/api/public/telegram/link'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/activity'
+    | '/briefing'
+    | '/chat'
+    | '/config'
+    | '/dashboard'
+    | '/help'
+    | '/lessons'
+    | '/notifications'
+    | '/performance'
+    | '/pnl'
+    | '/positions'
+    | '/screen'
+    | '/study'
+    | '/wallets'
+    | '/api/public/telegram/link'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
+  ActivityRoute: typeof ActivityRoute
+  BriefingRoute: typeof BriefingRoute
+  ChatRoute: typeof ChatRoute
+  ConfigRoute: typeof ConfigRoute
+  DashboardRoute: typeof DashboardRoute
+  HelpRoute: typeof HelpRoute
+  LessonsRoute: typeof LessonsRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PerformanceRoute: typeof PerformanceRoute
+  PnlRoute: typeof PnlRoute
+  PositionsRoute: typeof PositionsRoute
+  ScreenRoute: typeof ScreenRoute
+  StudyRoute: typeof StudyRoute
+  WalletsRoute: typeof WalletsRoute
   ApiPublicTelegramLinkRoute: typeof ApiPublicTelegramLinkRoute
 }
 
@@ -56,6 +258,111 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activity': {
+      id: '/activity'
+      path: '/activity'
+      fullPath: '/activity'
+      preLoaderRoute: typeof ActivityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefing': {
+      id: '/briefing'
+      path: '/briefing'
+      fullPath: '/briefing'
+      preLoaderRoute: typeof BriefingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/config': {
+      id: '/config'
+      path: '/config'
+      fullPath: '/config'
+      preLoaderRoute: typeof ConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lessons': {
+      id: '/lessons'
+      path: '/lessons'
+      fullPath: '/lessons'
+      preLoaderRoute: typeof LessonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/performance': {
+      id: '/performance'
+      path: '/performance'
+      fullPath: '/performance'
+      preLoaderRoute: typeof PerformanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pnl': {
+      id: '/pnl'
+      path: '/pnl'
+      fullPath: '/pnl'
+      preLoaderRoute: typeof PnlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/positions': {
+      id: '/positions'
+      path: '/positions'
+      fullPath: '/positions'
+      preLoaderRoute: typeof PositionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/screen': {
+      id: '/screen'
+      path: '/screen'
+      fullPath: '/screen'
+      preLoaderRoute: typeof ScreenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study': {
+      id: '/study'
+      path: '/study'
+      fullPath: '/study'
+      preLoaderRoute: typeof StudyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wallets': {
+      id: '/wallets'
+      path: '/wallets'
+      fullPath: '/wallets'
+      preLoaderRoute: typeof WalletsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/telegram/link': {
@@ -70,6 +377,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
+  ActivityRoute: ActivityRoute,
+  BriefingRoute: BriefingRoute,
+  ChatRoute: ChatRoute,
+  ConfigRoute: ConfigRoute,
+  DashboardRoute: DashboardRoute,
+  HelpRoute: HelpRoute,
+  LessonsRoute: LessonsRoute,
+  NotificationsRoute: NotificationsRoute,
+  PerformanceRoute: PerformanceRoute,
+  PnlRoute: PnlRoute,
+  PositionsRoute: PositionsRoute,
+  ScreenRoute: ScreenRoute,
+  StudyRoute: StudyRoute,
+  WalletsRoute: WalletsRoute,
   ApiPublicTelegramLinkRoute: ApiPublicTelegramLinkRoute,
 }
 export const routeTree = rootRouteImport
